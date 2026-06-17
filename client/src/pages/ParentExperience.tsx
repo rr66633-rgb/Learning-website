@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { Smartphone, Camera, MessageSquare, Bell, Heart } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const IMG = "/manus-storage/IMG_4420_0b7e428c.jpeg";
 
@@ -12,12 +12,13 @@ const features = [
 ];
 
 export default function ParentExperience() {
-  useEffect(() => {
-    document.title = "تجربة أولياء الأمور | مركز شجرة التعلم";
-  }, []);
-
   return (
     <div>
+      <SEOHead
+        title="تجربة أولياء الأمور | مركز شجرة التعلم - تطبيق Illumine"
+        description="تواصل مستمر مع أولياء الأمور عبر تطبيق Illumine. تحديثات يومية بالصور والتقارير ومراسلة مباشرة مع المعلمات."
+        path="/parent-experience"
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[var(--navy)]">
         <div className="container relative z-10">

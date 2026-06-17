@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Contact() {
-  useEffect(() => {
-    document.title = "تواصل معنا | مركز شجرة التعلم";
-  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -24,6 +22,12 @@ export default function Contact() {
 
   return (
     <div>
+      <SEOHead
+        title="تواصل معنا | مركز شجرة التعلم - سجّل طفلك الآن"
+        description="تواصل مع مركز شجرة التعلم في شارع عنيزة، الظهران. اتصل بنا على 0546653383 أو راسلنا واتساب للاستفسار عن التسجيل والبرامج."
+        path="/contact"
+        keywords="تواصل مركز شجرة التعلم, تسجيل حضانة الظهران, رقم هاتف حضانة, عنوان مركز شجرة التعلم"
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[var(--navy)]">
         <div className="container relative z-10">

@@ -1,16 +1,17 @@
-import { useEffect } from "react";
 import { Target, Eye, Heart, Sparkles, Lightbulb, Users } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const IMG = "/manus-storage/IMG_4416_bb4c7e59.jpeg";
 const IMG2 = "/manus-storage/IMG_4417_1d27fc77.jpeg";
 
 export default function About() {
-  useEffect(() => {
-    document.title = "من نحن | مركز شجرة التعلم";
-  }, []);
-
   return (
     <div>
+      <SEOHead
+        title="من نحن | مركز شجرة التعلم - قصتنا ورؤيتنا"
+        description="تأسس مركز شجرة التعلم عام 2024 في الظهران بهدف توفير بيئة تعليمية آمنة ومحفزة للأطفال. نؤمن بأن لكل طفل قدرات فريدة تستحق الاكتشاف والرعاية."
+        path="/about"
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[var(--navy)]">
         <div className="container relative z-10">

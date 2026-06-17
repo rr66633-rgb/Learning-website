@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { Shield, Camera, UserCheck, HeartPulse, Lock } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const IMG = "/manus-storage/IMG_4421_a4293a94.jpeg";
 
@@ -12,12 +12,13 @@ const safetyFeatures = [
 ];
 
 export default function Safety() {
-  useEffect(() => {
-    document.title = "الأمان والسلامة | مركز شجرة التعلم";
-  }, []);
-
   return (
     <div>
+      <SEOHead
+        title="الأمان والسلامة | مركز شجرة التعلم - بيئة آمنة لطفلك"
+        description="أعلى معايير الأمان والسلامة في مركز شجرة التعلم. كاميرات مراقبة لأولياء الأمور، أنظمة دخول محكمة، وكادر مؤهل ومدرب."
+        path="/safety"
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[var(--navy)]">
         <div className="container relative z-10">

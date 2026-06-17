@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { GraduationCap, Shield, Heart, BookOpen, Users, Star, ArrowLeft } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const HERO_IMG = "/manus-storage/IMG_4424_1a952bea.jpeg";
 const LOGO_FULL = "/manus-storage/logo-full_496ed816.png";
@@ -28,12 +28,14 @@ const programs = [
 ];
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "مركز شجرة التعلم | رعاية وتعليم الطفولة المبكرة في الظهران";
-  }, []);
-
   return (
     <div>
+      <SEOHead
+        title="مركز شجرة التعلم | حضانة وروضة أطفال في الظهران - Learning Tree Center"
+        description="مركز شجرة التعلم في الظهران يوفر بيئة تعليمية آمنة ومحفزة للأطفال من عمر سنتين حتى KG3. حضانة معتمدة من NDNA مع برامج علاج نطق ورعاية ممتدة."
+        path="/"
+        keywords="حضانة الظهران, روضة أطفال الظهران, مركز شجرة التعلم, Learning Tree Center, تعليم الطفولة المبكرة, KG1 KG2 KG3 الظهران, علاج نطق أطفال, NDNA accredited nursery Saudi"
+      />
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center">
         <div className="absolute inset-0">

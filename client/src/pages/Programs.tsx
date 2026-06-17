@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const IMG1 = "/manus-storage/IMG_4410_32804e7a.jpeg";
 const IMG3 = "/manus-storage/IMG_4412_ae9147b3.jpeg";
@@ -39,12 +39,14 @@ const programs = [
 ];
 
 export default function Programs() {
-  useEffect(() => {
-    document.title = "البرامج التعليمية | مركز شجرة التعلم";
-  }, []);
-
   return (
     <div>
+      <SEOHead
+        title="البرامج التعليمية | مركز شجرة التعلم - الحضانة وKG1 وKG2 وKG3"
+        description="برامج تعليمية متكاملة للأطفال من عمر سنتين حتى KG3 في الظهران. الحضانة وKG1 وKG2 وKG3 مع منهج شامل يركز على التطور الأكاديمي والاجتماعي."
+        path="/programs"
+        keywords="برامج حضانة الظهران, KG1 KG2 KG3 الظهران, روضة أطفال, منهج تعليمي أطفال, تعليم مبكر"
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[var(--navy)]">
         <div className="container relative z-10">

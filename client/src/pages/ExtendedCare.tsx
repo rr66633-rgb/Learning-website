@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { Clock, BookOpen, Palette, BookMarked, Sun, Users } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const IMG = "/manus-storage/IMG_4419_f5cf9230.jpeg";
 
@@ -13,12 +13,13 @@ const features = [
 ];
 
 export default function ExtendedCare() {
-  useEffect(() => {
-    document.title = "الرعاية الممتدة | مركز شجرة التعلم";
-  }, []);
-
   return (
     <div>
+      <SEOHead
+        title="الرعاية الممتدة والنادي المسائي | مركز شجرة التعلم"
+        description="خدمة الرعاية الممتدة حتى الساعة 6:30 مساءً مع نادي مسائي ودعم الواجبات وأنشطة إبداعية للأطفال في الظهران."
+        path="/extended-care"
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[var(--navy)]">
         <div className="container relative z-10">

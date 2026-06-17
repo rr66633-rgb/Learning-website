@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, Search, Target, UserCheck, Handshake } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const IMG = "/manus-storage/IMG_4418_2d702f2a.jpeg";
 
@@ -12,12 +12,14 @@ const services = [
 ];
 
 export default function SpeechTherapy() {
-  useEffect(() => {
-    document.title = "علاج النطق واللغة | مركز شجرة التعلم";
-  }, []);
-
   return (
     <div>
+      <SEOHead
+        title="علاج النطق واللغة للأطفال | مركز شجرة التعلم الظهران"
+        description="برنامج علاج نطق ولغة متخصص للأطفال في الظهران. تقييم شامل وجلسات علاجية فردية مع أخصائيين مؤهلين لمعالجة اضطرابات النطق والطلاقة واللغة."
+        path="/speech-therapy"
+        keywords="علاج نطق أطفال الظهران, أخصائي نطق, علاج لغة أطفال, تأخر نطق, speech therapy Dhahran"
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[var(--navy)]">
         <div className="container relative z-10">

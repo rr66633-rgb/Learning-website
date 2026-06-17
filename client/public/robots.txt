@@ -1,0 +1,11 @@
+# مركز شجرة التعلم - Learning Tree Center
+# https://learningtreeco.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://learningtreeco.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
