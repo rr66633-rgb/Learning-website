@@ -50,7 +50,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[var(--navy)]">الموقع</h3>
-                    <p className="text-sm text-[var(--navy)]/70">الظهران – حي أجيال</p>
+                    <p className="text-sm text-[var(--navy)]/70">شارع عنيزة، الظهران 34513</p>
                     <p className="text-sm text-[var(--navy)]/70">المملكة العربية السعودية</p>
                   </div>
                 </div>
@@ -189,7 +189,7 @@ export default function Contact() {
         <div className="container">
           <div className="rounded-2xl overflow-hidden shadow-lg h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.5!2d50.1!3d26.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDE4JzAwLjAiTiA1MMKwMDYnMDAuMCJF!5e0!3m2!1sen!2ssa!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.5!2d50.1136!3d26.3042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e126310f074b%3A0xeef6c2748e2df88!2z2YXYsdmD2LIg2LTYrNix2Kkg2KfZhNiq2LnZhNmFIExlYXJuaW5nIFRyZWUgQ2VudGVy!5e0!3m2!1sar!2ssa!4v1718000000000"
               width="100%"
               height="100%"
               style={{ border: 0 }}

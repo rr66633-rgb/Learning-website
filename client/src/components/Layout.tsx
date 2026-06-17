@@ -165,7 +165,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <div>
               <h4 className="font-bold text-lg mb-4">تواصل معنا</h4>
               <ul className="space-y-3 text-sm">
-                <li className="opacity-70">الظهران – حي أجيال<br />المملكة العربية السعودية</li>
+                <li className="opacity-70">شارع عنيزة، الظهران 34513<br />المملكة العربية السعودية</li>
                 <li>
                   <a href="tel:+966546653383" className="opacity-70 hover:opacity-100 transition-opacity" dir="ltr">
                     +966 54 665 3383
