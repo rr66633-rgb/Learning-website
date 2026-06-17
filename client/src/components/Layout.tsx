@@ -131,7 +131,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                 </div>
               </div>
               <p className="text-sm opacity-70 leading-relaxed">
-                بيئة تعليمية آمنة ومحفزة للأطفال من عمر سنتين حتى KG3 في الظهران، المملكة العربية السعودية.
+                حضانة وروضة أطفال بالظهران – حي أجيال. منهج EYFS البريطاني للأطفال من عمر سنتين إلى 6 سنوات.
               </p>
             </div>
 
@@ -153,10 +153,10 @@ export default function Layout({ children }: { children: ReactNode }) {
             <div>
               <h4 className="font-bold text-lg mb-4">برامجنا</h4>
               <ul className="space-y-2 text-sm opacity-70">
-                <li>الحضانة (من سنتين)</li>
-                <li>KG1</li>
-                <li>KG2</li>
-                <li>KG3</li>
+                <li>مرحلة التمهيدي (من عمر سنتين)</li>
+                <li>KG1 (من عمر 3 سنوات)</li>
+                <li>KG2 (من عمر 4 سنوات)</li>
+                <li>KG3 (من عمر 5 سنوات)</li>
                 <li>علاج النطق واللغة</li>
               </ul>
             </div>
@@ -165,7 +165,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <div>
               <h4 className="font-bold text-lg mb-4">تواصل معنا</h4>
               <ul className="space-y-3 text-sm">
-                <li className="opacity-70">شارع عنيزة، الظهران 34513<br />المملكة العربية السعودية</li>
+                <li className="opacity-70">حي أجيال، شارع عنيزة، الظهران 34513<br />المملكة العربية السعودية</li>
                 <li>
                   <a href="tel:+966546653383" className="opacity-70 hover:opacity-100 transition-opacity" dir="ltr">
                     +966 54 665 3383

@@ -12,29 +12,29 @@ const IMG5 = "/manus-storage/IMG_4414_4863c1f5.jpeg";
 const IMG6 = "/manus-storage/IMG_4415_a8f0c1b3.jpeg";
 
 const whyChooseUs = [
-  { icon: GraduationCap, title: "معتمدون دولياً", desc: "حاصلون على اعتماد NDNA للجودة في تعليم الطفولة المبكرة." },
-  { icon: Shield, title: "بيئة آمنة", desc: "كاميرات مراقبة على مدار الساعة مع إمكانية وصول أولياء الأمور ونظام تسجيل دخول آمن." },
-  { icon: Heart, title: "بيئة حاضنة", desc: "معلمات مؤهلات يحرصن على النمو العاطفي والأكاديمي لكل طفل." },
-  { icon: BookOpen, title: "منهج شامل", desc: "نهج متوازن يغطي القراءة والحساب والتواصل والمهارات الاجتماعية." },
-  { icon: Users, title: "شراكة مع الأسرة", desc: "تحديثات يومية عبر تطبيق Illumine مع صور وملاحظات وإنجازات الطفل." },
-  { icon: Star, title: "برامج ممتدة", desc: "رعاية ممتدة حتى الساعة ٦:٣٠ مساءً ونادي مسائي ودعم الواجبات." },
+  { icon: GraduationCap, title: "منهج EYFS البريطاني", desc: "نعتمد منهج السنوات المبكرة البريطاني الذي يركز على التعلم باللعب والاستكشاف." },
+  { icon: Shield, title: "بيئة آمنة ومراقبة", desc: "كاميرات مراقبة متاحة لأولياء الأمور ونظام دخول إلكتروني آمن." },
+  { icon: Heart, title: "كادر تربوي مؤهل", desc: "معلمات متخصصات في الطفولة المبكرة يحرصن على النمو العاطفي والأكاديمي." },
+  { icon: BookOpen, title: "تعلم باللعب والاستكشاف", desc: "نهج متوازن ينمّي الإبداع والتفكير النقدي والمهارات الاجتماعية." },
+  { icon: Users, title: "شراكة مع الأسرة", desc: "تحديثات يومية عبر تطبيق Illumine بالصور والتقارير والملاحظات." },
+  { icon: Star, title: "رعاية ممتدة", desc: "برنامج رعاية ما بعد الدوام حتى الساعة 6:30 مساءً لراحة الأسرة." },
 ];
 
 const programs = [
-  { name: "الحضانة", age: "من سنتين", img: IMG1 },
-  { name: "KG1", age: "٣+", img: IMG3 },
-  { name: "KG2", age: "٤+", img: IMG4 },
-  { name: "KG3", age: "٥+", img: IMG5 },
+  { name: "مرحلة التمهيدي", age: "من عمر سنتين", img: IMG1 },
+  { name: "KG1", age: "من عمر 3 سنوات", img: IMG3 },
+  { name: "KG2", age: "من عمر 4 سنوات", img: IMG4 },
+  { name: "KG3", age: "من عمر 5 سنوات", img: IMG5 },
 ];
 
 export default function Home() {
   return (
     <div>
       <SEOHead
-        title="مركز شجرة التعلم | حضانة وروضة أطفال في الظهران - Learning Tree Center"
-        description="مركز شجرة التعلم في الظهران يوفر بيئة تعليمية آمنة ومحفزة للأطفال من عمر سنتين حتى KG3. حضانة معتمدة من NDNA مع برامج علاج نطق ورعاية ممتدة."
+        title="مركز شجرة التعلم | حضانة وروضة أطفال بالظهران – حي أجيال"
+        description="مركز شجرة التعلم – حضانة وروضة أطفال بالظهران. منهج EYFS البريطاني للأطفال من عمر سنتين إلى 6 سنوات. بيئة تعليمية آمنة ومحفزة تنمّي ثقة الطفل ومهاراته."
         path="/"
-        keywords="حضانة الظهران, روضة أطفال الظهران, مركز شجرة التعلم, Learning Tree Center, تعليم الطفولة المبكرة, KG1 KG2 KG3 الظهران, علاج نطق أطفال, NDNA accredited nursery Saudi"
+        keywords="حضانة الظهران, روضة أطفال الظهران, مركز شجرة التعلم, Learning Tree Center, منهج EYFS, تعليم الطفولة المبكرة, KG1 KG2 KG3 الظهران, حي أجيال, علاج نطق أطفال"
       />
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center">
@@ -45,19 +45,17 @@ export default function Home() {
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
             <img src={LOGO_FULL} alt="شعار مركز شجرة التعلم" className="w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] h-auto mb-8 drop-shadow-lg" />
+            <h2 className="text-xl md:text-2xl font-bold text-white/90 mb-2">حضانة وروضة أطفال بالظهران – حي أجيال</h2>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
-              ننمي جيلاً واثقاً ومستعداً للمستقبل
+              منهج EYFS البريطاني للأطفال من عمر سنتين إلى 6 سنوات
             </h1>
             <p className="text-lg text-white/80 mb-8 leading-relaxed max-w-xl">
-              بيئة تعليمية آمنة ومحفزة للأطفال من عمر سنتين حتى KG3 في الظهران، تجمع بين الرعاية واللعب والتعلم وفق أفضل الممارسات العالمية.
+              بيئة تعليمية آمنة ومحفزة تنمّي ثقة الطفل ومهاراته من خلال التعلم باللعب والاستكشاف.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-[var(--green-primary)] text-white px-7 py-3.5 rounded-full font-bold text-base hover:bg-[var(--green-light)] transition-colors active:scale-[0.97]">
-                سجّل الآن
+                احجز جولة تعريفية
                 <ArrowLeft className="w-5 h-5" />
-              </Link>
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white border border-white/30 px-7 py-3.5 rounded-full font-bold text-base hover:bg-white/25 transition-colors">
-                احجز زيارة
               </Link>
               <a href="https://wa.me/966546653383" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] text-white px-7 py-3.5 rounded-full font-bold text-base hover:bg-[#20bd5a] transition-colors active:scale-[0.97]">
                 تواصل عبر واتساب
@@ -122,13 +120,17 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-white">
-              <h2 className="text-2xl md:text-3xl font-extrabold mb-2">معتمدون من NDNA</h2>
-              <p className="text-white/80 mt-3 max-w-lg">حاصلون على اعتماد الجمعية الوطنية لحضانات الأطفال (NDNA) لتحقيق أعلى المعايير الدولية في تعليم الطفولة المبكرة والسلامة ورعاية الأطفال.</p>
+              <h2 className="text-2xl md:text-3xl font-extrabold mb-2">منهج EYFS البريطاني المعتمد</h2>
+              <p className="text-white/80 mt-3 max-w-lg">نطبّق منهج السنوات المبكرة البريطاني (Early Years Foundation Stage) الذي يعتمد على التعلم باللعب والاستكشاف ويراعي الفروق الفردية لكل طفل، مع اعتماد NDNA للجودة.</p>
             </div>
             <div className="flex items-center gap-4">
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
+                <div className="text-4xl font-extrabold text-white">EYFS</div>
+                <div className="text-sm text-white/80 mt-1">السنوات المبكرة</div>
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
                 <div className="text-4xl font-extrabold text-white">NDNA</div>
-                <div className="text-sm text-white/80 mt-1">Quality Counts</div>
+                <div className="text-sm text-white/80 mt-1">اعتماد الجودة</div>
               </div>
             </div>
           </div>

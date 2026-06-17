@@ -54,7 +54,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[var(--navy)]">الموقع</h3>
-                    <p className="text-sm text-[var(--navy)]/70">شارع عنيزة، الظهران 34513</p>
+                    <p className="text-sm text-[var(--navy)]/70">حي أجيال، شارع عنيزة، الظهران 34513</p>
                     <p className="text-sm text-[var(--navy)]/70">المملكة العربية السعودية</p>
                   </div>
                 </div>
