@@ -27,9 +27,9 @@
 }
 
 :root {
-  --font-display: "Plus Jakarta Sans", sans-serif;
-  --font-body: "Plus Jakarta Sans", sans-serif;
-  --font-arabic: "Tajawal", sans-serif;
+  --font-display: "Tajawal", sans-serif;
+  --font-body: "Tajawal", sans-serif;
+  --font-english: "Plus Jakarta Sans", sans-serif;
 
   /* Brand Colors */
   --green-primary: oklch(0.45 0.14 145);
@@ -58,28 +58,6 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 700;
-  }
-
-  [dir="rtl"] body,
-  [lang="ar"] body,
-  .font-arabic {
-    font-family: var(--font-arabic);
-  }
-
-  [dir="rtl"] h1,
-  [dir="rtl"] h2,
-  [dir="rtl"] h3,
-  [dir="rtl"] h4,
-  [dir="rtl"] h5,
-  [dir="rtl"] h6,
-  .font-arabic h1,
-  .font-arabic h2,
-  .font-arabic h3,
-  .font-arabic h4,
-  .font-arabic h5,
-  .font-arabic h6 {
-    font-family: var(--font-arabic);
     font-weight: 800;
   }
 }

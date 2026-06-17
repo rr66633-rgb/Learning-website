@@ -4,26 +4,26 @@ import { Clock, BookOpen, Palette, BookMarked, Sun, Users } from "lucide-react";
 const IMG = "/manus-storage/IMG_4419_f5cf9230.jpeg";
 
 const features = [
-  { icon: Clock, title: "Extended Care until 6:30 PM", titleAr: "رعاية ممتدة حتى ٦:٣٠ مساءً", desc: "Flexible pick-up times to accommodate busy family schedules." },
-  { icon: Sun, title: "Evening Club", titleAr: "النادي المسائي", desc: "Engaging after-school activities for school-age students in a supervised environment." },
-  { icon: BookMarked, title: "Homework Support", titleAr: "دعم الواجبات", desc: "Dedicated time and guidance for completing homework with qualified supervisors." },
-  { icon: Palette, title: "Creative Projects", titleAr: "مشاريع إبداعية", desc: "Art, craft, and creative expression activities that develop imagination and fine motor skills." },
-  { icon: BookOpen, title: "Reading Support", titleAr: "دعم القراءة", desc: "Guided reading sessions to build literacy skills and foster a love of books." },
-  { icon: Users, title: "Structured Activities", titleAr: "أنشطة منظمة", desc: "Age-appropriate group activities that promote teamwork and social development." },
+  { icon: Clock, title: "رعاية ممتدة حتى ٦:٣٠ مساءً", desc: "أوقات استلام مرنة تناسب جداول الأسر المشغولة." },
+  { icon: Sun, title: "النادي المسائي", desc: "أنشطة ما بعد المدرسة ممتعة للأطفال في بيئة آمنة ومراقبة." },
+  { icon: BookMarked, title: "دعم الواجبات", desc: "وقت مخصص وإرشاد لإنجاز الواجبات المدرسية مع مشرفين مؤهلين." },
+  { icon: Palette, title: "مشاريع إبداعية", desc: "أنشطة فنية وحرفية تنمي الخيال والمهارات الحركية الدقيقة." },
+  { icon: BookOpen, title: "دعم القراءة", desc: "جلسات قراءة موجهة لبناء مهارات القراءة وتعزيز حب الكتب." },
+  { icon: Users, title: "أنشطة منظمة", desc: "أنشطة جماعية مناسبة للعمر تعزز العمل الجماعي والتطور الاجتماعي." },
 ];
 
 export default function ExtendedCare() {
   useEffect(() => {
-    document.title = "Extended Care | Learning Tree Center";
+    document.title = "الرعاية الممتدة | مركز شجرة التعلم";
   }, []);
 
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-24 bg-[var(--navy)]">
+      <section className="relative py-20 bg-[var(--navy)]">
         <div className="container relative z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3">Extended Care</h1>
-          <p className="text-2xl text-white/80 font-bold" style={{ fontFamily: "var(--font-arabic)" }}>الرعاية الممتدة</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">الرعاية الممتدة</h1>
+          <p className="text-lg text-white/70 max-w-2xl">برنامج رعاية ما بعد الدوام لتوفير بيئة آمنة ومحفزة لطفلك.</p>
         </div>
       </section>
 
@@ -33,16 +33,16 @@ export default function ExtendedCare() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="lg:order-2">
               <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
-                <img src={IMG} alt="Extended care activities at Learning Tree Center" className="w-full h-full img-crop" />
+                <img src={IMG} alt="أنشطة الرعاية الممتدة في مركز شجرة التعلم" className="w-full h-full img-crop" />
               </div>
             </div>
             <div className="lg:order-1">
-              <h2 className="text-3xl font-extrabold text-[var(--navy)] mb-6">Beyond the School Day</h2>
-              <p className="text-[var(--navy)]/80 leading-relaxed mb-4">
-                We understand that modern families need flexible childcare solutions. Our Extended Care program provides a safe, enriching environment for children beyond regular school hours, giving parents peace of mind while their children continue to learn and grow.
+              <h2 className="text-3xl font-extrabold text-[var(--navy)] mb-6">ما بعد اليوم الدراسي</h2>
+              <p className="text-[var(--navy)]/80 leading-relaxed mb-4 text-lg">
+                ندرك أن الأسر الحديثة تحتاج حلول رعاية مرنة. برنامج الرعاية الممتدة يوفر بيئة آمنة وغنية للأطفال بعد ساعات الدوام، مما يمنح الأهل راحة البال بينما يستمر أطفالهم في التعلم والنمو.
               </p>
-              <p className="text-[var(--navy)]/80 leading-relaxed">
-                From homework supervision to creative projects and structured play, our evening program ensures that every moment is purposeful and enjoyable for your child.
+              <p className="text-[var(--navy)]/80 leading-relaxed text-lg">
+                من متابعة الواجبات إلى المشاريع الإبداعية واللعب المنظم، برنامجنا المسائي يضمن أن كل لحظة هادفة وممتعة لطفلك.
               </p>
             </div>
           </div>
@@ -53,8 +53,7 @@ export default function ExtendedCare() {
       <section className="py-20 bg-[var(--sand)]">
         <div className="container">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-extrabold text-[var(--navy)] mb-3">What We Offer</h2>
-            <p className="text-xl text-[var(--green-primary)] font-bold" style={{ fontFamily: "var(--font-arabic)" }}>ما نقدمه</p>
+            <h2 className="text-3xl font-extrabold text-[var(--navy)] mb-3">ما نقدمه</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feat) => (
@@ -62,9 +61,8 @@ export default function ExtendedCare() {
                 <div className="w-12 h-12 rounded-xl bg-[var(--sunshine)]/30 flex items-center justify-center mb-4">
                   <feat.icon className="w-6 h-6 text-[var(--navy)]" />
                 </div>
-                <h3 className="text-base font-bold text-[var(--navy)] mb-1">{feat.title}</h3>
-                <p className="text-sm font-semibold text-[var(--green-primary)] mb-3" style={{ fontFamily: "var(--font-arabic)" }}>{feat.titleAr}</p>
-                <p className="text-sm text-[var(--navy)]/70 leading-relaxed">{feat.desc}</p>
+                <h3 className="text-lg font-bold text-[var(--navy)] mb-3">{feat.title}</h3>
+                <p className="text-[var(--navy)]/70 leading-relaxed">{feat.desc}</p>
               </div>
             ))}
           </div>
