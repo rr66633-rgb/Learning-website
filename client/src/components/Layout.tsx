@@ -2,7 +2,7 @@ import { useState, useEffect, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 
-const LOGO = "/manus-storage/logo_0136220a.jpeg";
+const LOGO = "/manus-storage/logo-full_496ed816.png";
 
 const navLinks = [
   { href: "/", label: "Home", labelAr: "الرئيسية" },
@@ -44,7 +44,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="container flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <img src={LOGO} alt="Learning Tree Center" className="h-12 lg:h-14 w-auto rounded-full" />
+            <img src={LOGO} alt="Learning Tree Center" className="h-12 lg:h-14 w-auto" />
             <div className="hidden sm:block">
               <p className="text-sm font-bold text-[var(--navy)] leading-tight" style={{ fontFamily: "var(--font-display)" }}>Learning Tree Center</p>
               <p className="text-xs text-[var(--green-primary)] font-bold" style={{ fontFamily: "var(--font-arabic)" }}>مركز شجرة التعلم</p>
@@ -127,7 +127,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src={LOGO} alt="Learning Tree Center" className="h-12 w-auto rounded-full" />
+                <img src={LOGO} alt="Learning Tree Center" className="h-12 w-auto" />
                 <div>
                   <p className="font-bold text-lg">Learning Tree Center</p>
                   <p className="text-sm opacity-80" style={{ fontFamily: "var(--font-arabic)" }}>مركز شجرة التعلم</p>

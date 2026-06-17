@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { GraduationCap, Shield, Heart, BookOpen, Users, Star, ArrowRight } from "lucide-react";
 
 const HERO_IMG = "/manus-storage/IMG_4424_1a952bea.jpeg";
+const LOGO_FULL = "/manus-storage/logo-full_496ed816.png";
 const IMG1 = "/manus-storage/IMG_4410_32804e7a.jpeg";
 const IMG2 = "/manus-storage/IMG_4411_8c1e7d44.jpeg";
 const IMG3 = "/manus-storage/IMG_4412_ae9147b3.jpeg";
@@ -42,6 +43,7 @@ export default function Home() {
         </div>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
+            <img src={LOGO_FULL} alt="Learning Tree Kids Center Logo" className="w-[180px] md:w-[200px] h-auto mb-6 drop-shadow-lg" />
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4" style={{ fontFamily: "var(--font-display)" }}>
               Growing Confident Learners for the Future
             </h1>
