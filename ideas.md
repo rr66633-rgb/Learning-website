@@ -1,75 +1,74 @@
-# Learning Tree Center - Website Design Brainstorm
+# Learning Tree Center - Full Website Redesign (Bilingual Multi-Page)
 
-## Three Distinct Stylistic Approaches
+## المتطلبات الجديدة
+- موقع ثنائي اللغة (عربي + إنجليزي) لمركز رعاية أطفال حقيقي في الظهران، السعودية
+- 8 صفحات: Home, About, Programs, Speech Therapy, Extended Care, Parent Experience, Safety, Contact
+- تصميم احترافي على مستوى المدارس الدولية الرائدة
+- Mobile-first, fast loading, SEO optimized
+- WhatsApp floating button + Call Now button
 
-### Approach 1: "Enchanted Forest Classroom"
-**Very Brief Intro:** A whimsical, nature-immersive design that transforms the website into a living forest classroom where each section feels like a new clearing in the woods. Warm earth tones meet playful organic shapes.
-**Probability:** 0.07
-
-### Approach 2: "Modern Nursery Press"
-**Very Brief Intro:** A clean, editorial-style design inspired by premium children's book publishers (like Usborne or DK). Sophisticated typography meets soft pastels with generous whitespace, giving a "high-end educational catalog" feel.
-**Probability:** 0.04
-
-### Approach 3: "Treehouse Discovery"
-**Very Brief Intro:** An interactive, layered design with depth and dimension—as if looking into a multi-level treehouse. Uses parallax scrolling, floating elements, and a warm golden-hour palette to create wonder.
-**Probability:** 0.06
+## ألوان الشعار
+- أخضر شجري (olive/forest green) — الشجرة
+- أزرق داكن (Navy) — النص والحلقات
+- أزرق فاتح — حلقة وسطى
+- أبيض — خلفية
 
 ---
 
-## CHOSEN APPROACH: "Enchanted Forest Classroom"
+## الاتجاه المختار: Nurturing Bloom — حديقة الطفولة المعاصرة
 
 ### Design Movement
-Organic Modernism meets Storybook Illustration — blending clean modern UI principles with hand-crafted, nature-inspired decorative elements that feel like stepping into a beautifully illustrated children's book.
+Scandinavian Organic Modernism meets Gulf Warmth — تصميم نظيف مع عناصر عضوية ناعمة، يوازن بين الاحترافية والدفء العائلي. مستوحى من أفضل مواقع المدارس الدولية (مثل Greenfield Community School, Jebel Ali School).
 
 ### Core Principles
-1. **Nature as Framework:** Every structural element draws from natural forms — leaf-shaped cards, branch-like navigation, trunk-like vertical rhythm.
-2. **Warmth Over Sterility:** Soft textures, warm lighting effects, and rounded organic shapes replace sharp corporate edges.
-3. **Playful Professionalism:** The design is fun and engaging for children while maintaining the trust and credibility parents expect from an educational institution.
-4. **Breathing Space:** Generous whitespace that mimics the openness of a forest clearing, letting content breathe naturally.
+1. **Trust Through Clarity** — مساحات بيضاء واسعة، تسلسل هرمي واضح
+2. **Organic Warmth** — أشكال مستديرة ناعمة، ظلال خفيفة، تدرجات طبيعية
+3. **Bilingual Harmony** — تصميم يتعامل بسلاسة مع العربية والإنجليزية
+4. **Parent-First UX** — كل قرار يخدم ولي الأمر المشغول
 
 ### Color Philosophy
-- **Forest Green (#2D5016):** Primary brand color — represents growth, learning, and nature. Used for headers and CTAs.
-- **Sage Green (#7BA05B):** Secondary — softer, approachable. Used for backgrounds and accents.
-- **Sky Blue (#87CEEB):** Tertiary — openness and possibility. Used for highlights and interactive states.
-- **Soft Yellow (#F5E6A3):** Warmth and sunshine. Used for badges, stars, and achievement elements.
-- **Warm Beige (#FDF8F0):** Base background — like aged paper in a storybook.
-- **Rich Brown (#5C3D2E):** Text and grounding elements — like tree bark.
+- **Primary Green** `oklch(0.52 0.14 145)` — أخضر الشجرة، النمو والحياة
+- **Navy Trust** `oklch(0.28 0.08 260)` — أزرق داكن، الثقة والمصداقية
+- **Sky Accent** `oklch(0.72 0.1 230)` — أزرق سماوي، خفة وانفتاح
+- **Warm Sand** `oklch(0.95 0.02 80)` — بيج دافئ للخلفيات
+- **Sunshine** `oklch(0.88 0.1 90)` — أصفر دافئ للتمييز
+- **Blush** `oklch(0.85 0.06 10)` — وردي خفيف لبطاقات مميزة
 
 ### Layout Paradigm
-Asymmetric organic flow — sections are not rigid grids but flowing, overlapping organic shapes. Content areas are framed by subtle leaf borders and branch decorations. The page scrolls like turning pages of a storybook, with each section revealing a new "scene" in the forest.
+- Asymmetric Flow مع أقسام متداخلة بصرياً
+- بطاقات بزوايا مستديرة كبيرة (20-24px) مع ظلال ناعمة
+- فراغات كبيرة بين الأقسام مع فواصل عضوية
+- RTL-ready Grid
 
 ### Signature Elements
-1. **Leaf-shaped cards** with subtle shadow depth for workbook showcases.
-2. **Character guides** — Lumi, Ollie, Pippo, and Nova appear as floating companions throughout the page, guiding users through sections.
-3. **Tree-ring progress indicators** — circular organic shapes that show curriculum progression.
+1. **Leaf Dividers** — فواصل أقسام عضوية
+2. **Growth Rings** — دوائر متداخلة كعناصر زخرفية
+3. **Trust Badges** — شارات اعتماد NDNA بارزة
 
 ### Interaction Philosophy
-Interactions feel natural and alive — hover effects cause gentle leaf rustling animations, buttons grow like budding flowers, and page transitions feel like wind carrying you to the next section. Nothing is jarring; everything flows organically.
+- تفاعلات هادئة وواثقة
+- أزرار CTA بارزة مع micro-animations
+- WhatsApp button ثابت يتنفس بلطف
 
 ### Animation
-- Entrance animations: Elements fade in with a gentle upward float (like leaves rising), staggered by 50ms.
-- Hover states: Subtle scale (1.02) with a warm glow effect, 200ms ease-out.
-- Page transitions: Soft crossfade with a slight parallax shift.
-- Character animations: Subtle idle breathing/floating animation on the mascot characters.
-- Scroll-triggered: Sections reveal with a gentle "unfurling" effect as they enter viewport.
+- Entrance: fade-up (300ms) مع stagger 60ms
+- Hover: scale(1.02) + shadow elevation
+- CTA Pulse: نبض خفيف لزر WhatsApp كل 4 ثوانٍ
 
 ### Typography System
-- **Display/Headers:** "Fredoka" — rounded, friendly, bold. Perfect for a children's education brand.
-- **Body Text:** "Nunito" — clean, highly readable, with soft rounded terminals that complement Fredoka.
-- **Hierarchy:** H1 (48px bold), H2 (36px semibold), H3 (24px medium), Body (16px regular), Small (14px).
+- **Display Arabic**: Tajawal Bold
+- **Display English**: Plus Jakarta Sans Bold
+- **Body Arabic**: Tajawal Regular
+- **Body English**: Plus Jakarta Sans Regular
+- **Hierarchy**: Hero 56px → H2 40px → H3 28px → Body 18px → Small 14px
 
 ### Brand Essence
-**One-line positioning:** Learning Tree Center is a premium early-years education center in Saudi Arabia that nurtures young minds through nature-inspired, culturally-grounded curricula — for parents who want their children to thrive, not just learn.
-**Personality adjectives:** Nurturing, Imaginative, Trustworthy.
+مركز رعاية أطفال متميز في الظهران يجمع بين المعايير الدولية والقيم المحلية.
+**شخصية العلامة**: دافئ، موثوق، متميز
 
 ### Brand Voice
-Headlines sound warm, encouraging, and slightly poetic — like a wise owl speaking to young explorers.
-- Example headline: "Where Little Minds Grow Big"
-- Example CTA: "Explore Our Forest of Knowledge"
-Ban: "Welcome to our website", "Get started today", "Click here"
-
-### Wordmark & Logo
-The existing Learning Tree Kids Center logo (circular emblem with green tree) will be used prominently. The wordmark features the brand name in a custom rounded typeface integrated with leaf motifs.
+- "ننمي جيلاً واثقاً ومستعداً للمستقبل"
+- "احجز جولتك اليوم واكتشف بيئة التعلم"
 
 ### Signature Brand Color
-**Forest Green (#2D5016)** — unmistakably Learning Tree's ownable color, representing growth, nature, and the nurturing environment of the center.
+**Primary Green** `oklch(0.52 0.14 145)` — أخضر الشجرة
