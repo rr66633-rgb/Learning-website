@@ -177,6 +177,18 @@ export default function Layout({ children }: { children: ReactNode }) {
                   </a>
                 </li>
               </ul>
+              {/* Social Media / Linktree */}
+              <div className="mt-6">
+                <a
+                  href="https://linktr.ee/Learningtreeksa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[var(--green-primary)] text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-[var(--green-light)] transition-colors active:scale-[0.97]"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7.953 15.066l-.038.002a.975.975 0 0 1-.935-.7l-.002-.006-1.558-5.153a.976.976 0 0 1 .648-1.222l.002-.001h.014a.976.976 0 0 1 1.217.649l1.092 3.56 2.313-2.313a.976.976 0 0 1 1.38 1.38l-2.312 2.313 3.559 1.092a.976.976 0 0 1-.573 1.866l-5.153-1.558a.953.953 0 0 1-.652-.909zm8.091 0l.038.002a.975.975 0 0 0 .935-.7l.002-.006 1.558-5.153a.976.976 0 0 0-.648-1.222l-.002-.001h-.014a.976.976 0 0 0-1.217.649l-1.092 3.56-2.313-2.313a.976.976 0 0 0-1.38 1.38l2.312 2.313-3.559 1.092a.976.976 0 0 0 .573 1.866l5.153-1.558a.953.953 0 0 0 .652-.909zM12 18.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM12 0a1.5 1.5 0 0 0-1.5 1.5v3a1.5 1.5 0 0 0 3 0v-3A1.5 1.5 0 0 0 12 0z"/></svg>
+                  تابعونا على منصات التواصل
+                </a>
+              </div>
             </div>
           </div>
 
