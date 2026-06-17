@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Star, Users, GraduationCap, Leaf, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -26,6 +27,10 @@ const stagger = {
 };
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Learning Tree Kids Center | Premium KG3 Workbooks & Early Education";
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Navigation */}
@@ -50,7 +55,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-20 md:pt-24 min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="" className="w-full h-full object-cover" />
+          <img src={HERO_IMG} alt="Enchanted forest classroom with friendly animal characters and educational elements" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
         </div>
         <div className="container relative z-10">
