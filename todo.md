@@ -9,3 +9,9 @@
 - [x] Add CSV export button in admin dashboard
 - [x] Add Excel export button in admin dashboard
 - [x] Add export endpoint in backend (adminProcedure)
+- [x] Add Rate Limiting (5 req/min per IP) on inquiry.submit with HTTP 429
+- [x] Add Cloudflare Turnstile CAPTCHA on all public forms (code ready, awaiting keys)
+- [x] Add X-Frame-Options: DENY header
+- [x] Add Content-Security-Policy header
+- [ ] Verify all security measures work in production
+- [x] Run tests to ensure no existing functionality is broken (20/20 passed)

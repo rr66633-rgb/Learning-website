@@ -7,6 +7,7 @@ import { inquiries } from "../drizzle/schema";
 import { desc, eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { notifyOwner } from "./_core/notification";
+import { verifyTurnstileToken } from "./security";
 
 export const appRouter = router({
   system: systemRouter,
@@ -28,8 +29,19 @@ export const appRouter = router({
         phone: z.string().max(20).optional(),
         childAge: z.string().max(50).optional(),
         message: z.string().max(2000).optional(),
+        turnstileToken: z.string().optional(),
       }))
       .mutation(async ({ input }) => {
+        // Verify CAPTCHA token if provided (required when Turnstile is configured)
+        if (process.env.TURNSTILE_SECRET_KEY) {
+          if (!input.turnstileToken) {
+            throw new Error("CAPTCHA verification required");
+          }
+          const isValid = await verifyTurnstileToken(input.turnstileToken);
+          if (!isValid) {
+            throw new Error("CAPTCHA verification failed. Please try again.");
+          }
+        }
         const db = await getDb();
         if (!db) throw new Error("Database not available");
 

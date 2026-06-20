@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { SEOHead } from "@/components/SEOHead";
 import { trpc } from "@/lib/trpc";
+import { TurnstileCaptcha, useTurnstileEnabled } from "@/components/TurnstileCaptcha";
 
 export default function Contact() {
 
@@ -16,10 +17,27 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileEnabled = useTurnstileEnabled();
   const submitInquiry = trpc.inquiry.submit.useMutation();
+
+  const handleTurnstileVerify = useCallback((token: string) => {
+    setTurnstileToken(token);
+  }, []);
+
+  const handleTurnstileExpire = useCallback(() => {
+    setTurnstileToken(null);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Check CAPTCHA if enabled
+    if (turnstileEnabled && !turnstileToken) {
+      toast.error("يرجى إكمال التحقق أولاً.");
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       await submitInquiry.mutateAsync({
@@ -28,11 +46,19 @@ export default function Contact() {
         phone: formData.phone || undefined,
         childAge: formData.childAge || undefined,
         message: formData.message || undefined,
+        turnstileToken: turnstileToken || undefined,
       });
       toast.success("شكراً لتواصلك! تم استلام استفسارك وسنرد عليك قريباً.");
       setFormData({ name: "", email: "", phone: "", childAge: "", message: "" });
-    } catch {
-      toast.error("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
+      setTurnstileToken(null);
+    } catch (error: any) {
+      if (error?.message?.includes("Too many requests")) {
+        toast.error("لقد تجاوزت الحد المسموح. يرجى الانتظار دقيقة ثم المحاولة مرة أخرى.");
+      } else if (error?.message?.includes("CAPTCHA")) {
+        toast.error("فشل التحقق. يرجى المحاولة مرة أخرى.");
+      } else {
+        toast.error("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -194,9 +220,17 @@ export default function Contact() {
                     placeholder="أخبرنا عن استفسارك..."
                   />
                 </div>
+
+                {/* Cloudflare Turnstile CAPTCHA */}
+                <TurnstileCaptcha
+                  onVerify={handleTurnstileVerify}
+                  onExpire={handleTurnstileExpire}
+                  onError={handleTurnstileExpire}
+                />
+
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || (turnstileEnabled && !turnstileToken)}
                   className="w-full bg-[var(--green-primary)] text-white py-3 rounded-xl font-bold text-base hover:bg-[var(--navy)] transition-colors active:scale-[0.98] disabled:opacity-50"
                 >
                   {isSubmitting ? "جاري الإرسال..." : "إرسال الاستفسار"}
