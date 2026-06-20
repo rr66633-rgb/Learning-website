@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { SEOHead } from "@/components/SEOHead";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
 
@@ -14,10 +15,27 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const submitInquiry = trpc.inquiry.submit.useMutation();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("شكراً لتواصلك! سنرد عليك قريباً.");
-    setFormData({ name: "", email: "", phone: "", childAge: "", message: "" });
+    setIsSubmitting(true);
+    try {
+      await submitInquiry.mutateAsync({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        childAge: formData.childAge || undefined,
+        message: formData.message || undefined,
+      });
+      toast.success("شكراً لتواصلك! تم استلام استفسارك وسنرد عليك قريباً.");
+      setFormData({ name: "", email: "", phone: "", childAge: "", message: "" });
+    } catch {
+      toast.error("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -178,9 +196,10 @@ export default function Contact() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-[var(--green-primary)] text-white py-3 rounded-xl font-bold text-base hover:bg-[var(--navy)] transition-colors active:scale-[0.98]"
+                  disabled={isSubmitting}
+                  className="w-full bg-[var(--green-primary)] text-white py-3 rounded-xl font-bold text-base hover:bg-[var(--navy)] transition-colors active:scale-[0.98] disabled:opacity-50"
                 >
-                  إرسال الاستفسار
+                  {isSubmitting ? "جاري الإرسال..." : "إرسال الاستفسار"}
                 </Button>
               </form>
             </div>

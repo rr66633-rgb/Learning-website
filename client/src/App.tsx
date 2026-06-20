@@ -13,8 +13,9 @@ import ExtendedCare from "./pages/ExtendedCare";
 import ParentExperience from "./pages/ParentExperience";
 import Safety from "./pages/Safety";
 import Contact from "./pages/Contact";
-
+import AdminDashboard from "./pages/AdminDashboard";
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Layout>
       <Switch>
@@ -26,6 +27,7 @@ function Router() {
         <Route path="/parent-experience" component={ParentExperience} />
         <Route path="/safety" component={Safety} />
         <Route path="/contact" component={Contact} />
+        <Route path="/admin" component={AdminDashboard} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
