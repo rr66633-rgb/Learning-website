@@ -192,8 +192,17 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
           </div>
 
-          <div className="border-t border-white/20 mt-10 pt-8 text-center">
+          <div className="border-t border-white/20 mt-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm opacity-60">جميع الحقوق محفوظة © ٢٠٢٤ مركز شجرة التعلم</p>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy" className="text-sm opacity-60 hover:opacity-100 transition-opacity">
+                سياسة الخصوصية
+              </Link>
+              <span className="text-white/30">|</span>
+              <Link href="/terms" className="text-sm opacity-60 hover:opacity-100 transition-opacity">
+                شروط الاستخدام
+              </Link>
+            </div>
           </div>
         </div>
       </footer>

@@ -13,5 +13,8 @@
 - [x] Add Cloudflare Turnstile CAPTCHA on all public forms (code ready, awaiting keys)
 - [x] Add X-Frame-Options: DENY header
 - [x] Add Content-Security-Policy header
-- [ ] Verify all security measures work in production
+- [x] Verify all security measures work in production
 - [x] Run tests to ensure no existing functionality is broken (20/20 passed)
+- [x] Create Privacy Policy page (/privacy)
+- [x] Create Terms of Use page (/terms)
+- [x] Add privacy and terms links to footer on all pages
