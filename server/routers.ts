@@ -102,6 +102,25 @@ export const appRouter = router({
         return { success: true };
       }),
 
+    // Admin: export all inquiries (for CSV/Excel download)
+    export: adminProcedure
+      .input(z.object({
+        status: z.enum(["all", "new", "contacted", "enrolled", "archived"]).optional().default("all"),
+      }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+
+        let items;
+        if (input.status !== "all") {
+          items = await db.select().from(inquiries).where(eq(inquiries.status, input.status)).orderBy(desc(inquiries.createdAt));
+        } else {
+          items = await db.select().from(inquiries).orderBy(desc(inquiries.createdAt));
+        }
+
+        return { items };
+      }),
+
     // Admin: get stats
     stats: adminProcedure.query(async () => {
       const db = await getDb();

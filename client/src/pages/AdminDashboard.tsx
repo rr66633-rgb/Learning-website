@@ -4,7 +4,8 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { Inbox, CheckCircle, UserPlus, Archive, RefreshCw, LogOut } from "lucide-react";
+import { Inbox, CheckCircle, UserPlus, Archive, RefreshCw, LogOut, Download, FileSpreadsheet } from "lucide-react";
+import * as XLSX from "xlsx";
 
 const STATUS_MAP: Record<string, { label: string; color: string; icon: typeof Inbox }> = {
   new: { label: "جديد", color: "bg-blue-100 text-blue-800", icon: Inbox },
@@ -13,10 +14,89 @@ const STATUS_MAP: Record<string, { label: string; color: string; icon: typeof In
   archived: { label: "مؤرشف", color: "bg-gray-100 text-gray-600", icon: Archive },
 };
 
+const STATUS_LABELS: Record<string, string> = {
+  new: "جديد",
+  contacted: "تم التواصل",
+  enrolled: "مسجّل",
+  archived: "مؤرشف",
+};
+
+function formatDateForExport(dateStr: string | Date): string {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("ar-SA", { year: "numeric", month: "2-digit", day: "2-digit" });
+}
+
+function exportToCSV(items: Array<Record<string, unknown>>) {
+  const headers = ["#", "الاسم", "البريد الإلكتروني", "الجوال", "عمر الطفل", "الرسالة", "الحالة", "التاريخ"];
+  const rows = items.map((item, idx) => [
+    idx + 1,
+    item.name || "",
+    item.email || "",
+    item.phone || "",
+    item.childAge || "",
+    item.message || "",
+    STATUS_LABELS[item.status as string] || item.status || "",
+    item.createdAt ? formatDateForExport(item.createdAt as string) : "",
+  ]);
+
+  // BOM for Arabic support in Excel
+  const BOM = "\uFEFF";
+  const csvContent = BOM + [headers.join(","), ...rows.map(row =>
+    row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")
+  )].join("\n");
+
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `استفسارات_مركز_شجرة_التعلم_${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
+function exportToExcel(items: Array<Record<string, unknown>>) {
+  const data = items.map((item, idx) => ({
+    "#": idx + 1,
+    "الاسم": item.name || "",
+    "البريد الإلكتروني": item.email || "",
+    "الجوال": item.phone || "",
+    "عمر الطفل": item.childAge || "",
+    "الرسالة": item.message || "",
+    "الحالة": STATUS_LABELS[item.status as string] || item.status || "",
+    "التاريخ": item.createdAt ? formatDateForExport(item.createdAt as string) : "",
+  }));
+
+  const ws = XLSX.utils.json_to_sheet(data);
+  // Set RTL for the sheet
+  ws["!cols"] = [
+    { wch: 5 },   // #
+    { wch: 20 },  // الاسم
+    { wch: 30 },  // البريد
+    { wch: 18 },  // الجوال
+    { wch: 12 },  // عمر الطفل
+    { wch: 40 },  // الرسالة
+    { wch: 12 },  // الحالة
+    { wch: 14 },  // التاريخ
+  ];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "الاستفسارات");
+
+  // Set RTL view for the workbook
+  if (!wb.Workbook) wb.Workbook = {};
+  if (!wb.Workbook.Views) wb.Workbook.Views = [];
+  wb.Workbook.Views[0] = { RTL: true };
+
+  XLSX.writeFile(wb, `استفسارات_مركز_شجرة_التعلم_${new Date().toISOString().slice(0, 10)}.xlsx`);
+}
+
 export default function AdminDashboard() {
   const { user, loading: authLoading, isAuthenticated, logout } = useAuth();
   const [statusFilter, setStatusFilter] = useState<"all" | "new" | "contacted" | "enrolled" | "archived">("all");
   const [page, setPage] = useState(1);
+  const [isExporting, setIsExporting] = useState(false);
 
   const { data: stats, refetch: refetchStats } = trpc.inquiry.stats.useQuery(undefined, {
     enabled: isAuthenticated && user?.role === "admin",
@@ -37,6 +117,31 @@ export default function AdminDashboard() {
       toast.error("حدث خطأ أثناء التحديث");
     },
   });
+
+  const trpcUtils = trpc.useUtils();
+
+  const handleExport = async (format: "csv" | "excel") => {
+    setIsExporting(true);
+    try {
+      const result = await trpcUtils.inquiry.export.fetch({ status: statusFilter });
+      if (!result?.items?.length) {
+        toast.error("لا توجد بيانات للتصدير");
+        return;
+      }
+
+      if (format === "csv") {
+        exportToCSV(result.items as Array<Record<string, unknown>>);
+        toast.success("تم تصدير الملف بصيغة CSV بنجاح");
+      } else {
+        exportToExcel(result.items as Array<Record<string, unknown>>);
+        toast.success("تم تصدير الملف بصيغة Excel بنجاح");
+      }
+    } catch {
+      toast.error("حدث خطأ أثناء التصدير");
+    } finally {
+      setIsExporting(false);
+    }
+  };
 
   // Auth loading state
   if (authLoading) {
@@ -121,27 +226,53 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Filter & Refresh */}
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <div className="flex gap-2 flex-wrap">
-            {(["all", "new", "contacted", "enrolled", "archived"] as const).map((s) => (
-              <button
-                key={s}
-                onClick={() => { setStatusFilter(s); setPage(1); }}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                  statusFilter === s
-                    ? "bg-[var(--green-primary)] text-white"
-                    : "bg-white text-gray-600 border hover:bg-gray-50"
-                }`}
-              >
-                {s === "all" ? "الكل" : STATUS_MAP[s].label}
-              </button>
-            ))}
+        {/* Filter, Refresh & Export */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex gap-2 flex-wrap">
+              {(["all", "new", "contacted", "enrolled", "archived"] as const).map((s) => (
+                <button
+                  key={s}
+                  onClick={() => { setStatusFilter(s); setPage(1); }}
+                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                    statusFilter === s
+                      ? "bg-[var(--green-primary)] text-white"
+                      : "bg-white text-gray-600 border hover:bg-gray-50"
+                  }`}
+                >
+                  {s === "all" ? "الكل" : STATUS_MAP[s].label}
+                </button>
+              ))}
+            </div>
+            <Button variant="outline" size="sm" onClick={() => { refetch(); refetchStats(); }}>
+              <RefreshCw className="w-4 h-4 ml-1" />
+              تحديث
+            </Button>
           </div>
-          <Button variant="outline" size="sm" onClick={() => { refetch(); refetchStats(); }}>
-            <RefreshCw className="w-4 h-4 ml-1" />
-            تحديث
-          </Button>
+
+          {/* Export Buttons */}
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleExport("csv")}
+              disabled={isExporting}
+              className="border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+            >
+              <Download className="w-4 h-4 ml-1" />
+              {isExporting ? "جاري التصدير..." : "تصدير CSV"}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleExport("excel")}
+              disabled={isExporting}
+              className="border-blue-200 text-blue-700 hover:bg-blue-50"
+            >
+              <FileSpreadsheet className="w-4 h-4 ml-1" />
+              {isExporting ? "جاري التصدير..." : "تصدير Excel"}
+            </Button>
+          </div>
         </div>
 
         {/* Inquiries Table */}
