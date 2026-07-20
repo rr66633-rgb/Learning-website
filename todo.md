@@ -18,3 +18,6 @@
 - [x] Create Privacy Policy page (/privacy)
 - [x] Create Terms of Use page (/terms)
 - [x] Add privacy and terms links to footer on all pages
+- [x] Create public Subscriptions/Tuition page (/subscriptions)
+- [x] Add subscriptions link to navigation menu
+- [x] Register /subscriptions route in App.tsx

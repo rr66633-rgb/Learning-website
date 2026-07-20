@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/extended-care", label: "الرعاية الممتدة" },
   { href: "/parent-experience", label: "أولياء الأمور" },
   { href: "/safety", label: "الأمان" },
+  { href: "/subscriptions", label: "الرسوم" },
   { href: "/contact", label: "تواصل معنا" },
 ];
 

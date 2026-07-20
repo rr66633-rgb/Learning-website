@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/AdminDashboard";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import Subscriptions from "./pages/Subscriptions";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -32,6 +33,7 @@ function Router() {
         <Route path="/admin" component={AdminDashboard} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={Terms} />
+        <Route path="/subscriptions" component={Subscriptions} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
