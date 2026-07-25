@@ -21,3 +21,6 @@
 - [x] Create public Subscriptions/Tuition page (/subscriptions)
 - [x] Add subscriptions link to navigation menu
 - [x] Register /subscriptions route in App.tsx
+- [x] Add testimonials/reviews section to homepage (real quotes from Google reviews)
+- [x] Add FAQ section (frequently asked questions)
+- [x] Add sticky CTA button in header (register/book tour)

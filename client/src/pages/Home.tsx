@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { GraduationCap, Shield, Heart, BookOpen, Users, Star, ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import { GraduationCap, Shield, Heart, BookOpen, Users, Star, ArrowLeft, Quote, ChevronDown } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
 const HERO_IMG = "/manus-storage/IMG_4424_1a952bea.jpeg";
@@ -154,6 +155,85 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--navy)] mb-3">
+              آراء أولياء الأمور
+            </h2>
+            <p className="text-[var(--navy)]/60 max-w-lg mx-auto">
+              ثقة العائلات هي أغلى ما نملك — إليكم بعض تجاربهم معنا
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "سما",
+                text: "من أفضل وأحسن المراكز. تنظيم وترتيب وحب وحرص واضح بالأطفال بكل تفصيلة. إبداعاتهم وفعالياتهم وتعاملهم مع الأطفال احترافي.",
+                rating: 5,
+              },
+              {
+                name: "رؤى الغامدي",
+                text: "مكان رائع جداً، حرص وعناية وحب واهتمام، محضن دافئ وبرامج ممتعة ومفيدة. بنتي من أول أسبوع تعلقت في المكان.",
+                rating: 5,
+              },
+              {
+                name: "عبدالإله القرني",
+                text: "تجربة لحوالي سنتين معاهم وأوصي بهم دائماً. برنامج متكامل وكادر مهني متمكن ومنشأة مجهزة وبيئة رائعة للأطفال.",
+                rating: 5,
+              },
+              {
+                name: "ألين",
+                text: "المركز يستحق كل التقدير. واضح جداً التطور اللي يحققه الأطفال يوم بعد يوم، وبيئة المركز تخليهم يحبون التعلم ويستفيدون بطريقة ممتعة.",
+                rating: 5,
+              },
+              {
+                name: "بشرى الضفيري",
+                text: "الله يعطيكم العافية عالمجهود اللي تبذلونه. حبيت الاهتمام الكبير بالأطفال وتنوع النشاطات والفعاليات والرحلات.",
+                rating: 5,
+              },
+              {
+                name: "زهرة",
+                text: "من أروع الحضانات من ناحية الاهتمام بالطفل والتعليم. يستاهلون الشكر والتقدير ولو في أكثر من خمس نجوم. طفلك في أمان وعلى أيدي معلمات كفؤ.",
+                rating: 5,
+              },
+            ].map((review, i) => (
+              <div
+                key={i}
+                className="bg-[var(--sand)] rounded-2xl p-6 relative hover:shadow-md transition-shadow"
+              >
+                <Quote className="w-8 h-8 text-[var(--green-primary)]/20 absolute top-4 left-4" />
+                <div className="flex items-center gap-1 mb-3">
+                  {Array.from({ length: review.rating }).map((_, s) => (
+                    <svg key={s} className="w-4 h-4 text-[var(--sunshine)]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-sm text-[var(--navy)]/80 leading-relaxed mb-4">
+                  {review.text}
+                </p>
+                <p className="text-sm font-bold text-[var(--navy)]">{review.name}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <a
+              href="https://maps.app.goo.gl/LearningTreeDhahran"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[var(--green-primary)] font-bold hover:gap-3 transition-all"
+            >
+              عرض جميع التقييمات على خرائط جوجل <ArrowLeft className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
+
       {/* Social Media Section */}
       <section className="py-20 bg-[var(--sand)]">
         <div className="container text-center">
@@ -209,5 +289,81 @@ export default function Home() {
         </div>
       </section>
     </div>
+  );
+}
+
+/* FAQ Section Component */
+const faqItems = [
+  {
+    q: "ما هي الأعمار المقبولة في المركز؟",
+    a: "نستقبل الأطفال من عمر سنتين حتى 6 سنوات، موزعين على أربع مراحل: التمهيدي (سنتين)، KG1 (3 سنوات)، KG2 (4 سنوات)، KG3 (5 سنوات).",
+  },
+  {
+    q: "ما هو المنهج المتبع؟",
+    a: "نعتمد منهج EYFS البريطاني (Early Years Foundation Stage) الذي يركز على التعلم من خلال اللعب والاستكشاف، مع مراعاة الفروق الفردية لكل طفل.",
+  },
+  {
+    q: "ما هي ساعات الدوام؟",
+    a: "الدوام الأساسي من الساعة 7:00 صباحاً حتى 1:00 ظهراً. كما نوفر برنامج رعاية ممتدة حتى الساعة 6:30 مساءً.",
+  },
+  {
+    q: "هل يوجد خدمة نقل؟",
+    a: "نعم، نوفر خدمة نقل بحافلات مجهزة ومراقبة لتغطية مناطق الظهران والخبر والدمام.",
+  },
+  {
+    q: "كيف أتابع يوميات طفلي؟",
+    a: "نستخدم تطبيق Illumine الذي يتيح لأولياء الأمور متابعة يوميات أطفالهم بالصور والتقارير والملاحظات اليومية، بالإضافة إلى كاميرات مراقبة متاحة.",
+  },
+  {
+    q: "هل يمكنني زيارة المركز قبل التسجيل؟",
+    a: "بالتأكيد! نرحب بزيارتكم في أي وقت خلال ساعات الدوام. يمكنكم حجز جولة تعريفية عبر صفحة التواصل أو الاتصال المباشر.",
+  },
+];
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="py-20 bg-[var(--sand)]">
+      <div className="container">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--navy)] mb-3">
+            الأسئلة الشائعة
+          </h2>
+          <p className="text-[var(--navy)]/60 max-w-lg mx-auto">
+            إجابات على أكثر الأسئلة التي تصلنا من أولياء الأمور
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto space-y-3">
+          {faqItems.map((item, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl overflow-hidden shadow-sm"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full flex items-center justify-between px-6 py-5 text-right gap-4"
+              >
+                <span className="text-base font-bold text-[var(--navy)]">{item.q}</span>
+                <ChevronDown
+                  className={`w-5 h-5 text-[var(--green-primary)] shrink-0 transition-transform duration-200 ${
+                    openIndex === i ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-out ${
+                  openIndex === i ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="px-6 pb-5 text-sm text-[var(--navy)]/70 leading-relaxed">
+                  {item.a}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
