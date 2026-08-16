@@ -2,7 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { X, Send } from "lucide-react";
 
-const BERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/TeBQUvOCdRXTakNq.png";
+const BERO_DOWN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/TeBQUvOCdRXTakNq.png";
+const BERO_WAVE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/MnBlSbyXEyBsPUOD.png";
 
 type Message = {
   role: "user" | "assistant";
@@ -11,12 +12,23 @@ type Message = {
 
 export function BeroChatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isWaving, setIsWaving] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([
     { role: "assistant", content: "أهلاً! أنا بيرو 🐻 مساعد مركز شجرة التعلم. كيف أقدر أساعدك؟" },
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Wave animation: alternate between two images
+  useEffect(() => {
+    if (isOpen) return;
+    const interval = setInterval(() => {
+      setIsWaving(true);
+      setTimeout(() => setIsWaving(false), 600);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [isOpen]);
 
   const sendMutation = trpc.chat.send.useMutation({
     onSuccess: (data) => {
@@ -58,10 +70,10 @@ export function BeroChatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-20 h-24 hover:scale-110 transition-transform active:scale-95 drop-shadow-lg animate-[bero-wave_2s_ease-in-out_infinite]"
+          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-20 h-24 hover:scale-110 transition-transform active:scale-95 drop-shadow-lg "
           aria-label="تحدث مع بيرو"
         >
-          <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-contain" />
+          <img src={isWaving ? BERO_WAVE : BERO_DOWN} alt="بيرو" className="w-full h-full object-contain" />
         </button>
       )}
 
@@ -71,7 +83,7 @@ export function BeroChatbot() {
           {/* Header */}
           <div className="bg-[var(--navy)] px-4 py-3 flex items-center gap-3">
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--green-primary)] bg-[var(--sand)] shrink-0">
-              <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-cover object-center" />
+              <img src={BERO_DOWN} alt="بيرو" className="w-full h-full object-cover object-center" />
             </div>
             <div className="flex-1">
               <p className="text-white font-bold text-sm">بيرو 🐻</p>
