@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { X, Send } from "lucide-react";
 
-const BERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/DHBwBloxsRYjWutg.png";
+const BERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/TeBQUvOCdRXTakNq.png";
 
 type Message = {
   role: "user" | "assistant";
