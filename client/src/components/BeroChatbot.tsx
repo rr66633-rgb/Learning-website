@@ -58,10 +58,10 @@ export function BeroChatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-16 h-16 rounded-full shadow-xl hover:scale-110 transition-transform active:scale-95 overflow-hidden border-2 border-[var(--green-primary)] bg-[var(--sand)]"
+          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-20 h-24 hover:scale-110 transition-transform active:scale-95 drop-shadow-lg"
           aria-label="تحدث مع بيرو"
         >
-          <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-cover object-center" />
+          <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-contain" />
         </button>
       )}
 
