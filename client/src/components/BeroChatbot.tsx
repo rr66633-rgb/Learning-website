@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { X, Send } from "lucide-react";
 
-const BERO_DOWN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/TeBQUvOCdRXTakNq.png";
-const BERO_WAVE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/MnBlSbyXEyBsPUOD.png";
+const BERO_DOWN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/FkYEMetyHcPXLsVD.png";
+const BERO_WAVE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/PKoydXLmxlqqpIQt.png";
 
 type Message = {
   role: "user" | "assistant";
@@ -23,6 +23,9 @@ export function BeroChatbot() {
   // Wave animation: alternate between two images
   useEffect(() => {
     if (isOpen) return;
+    // Preload waving image
+    const img = new Image();
+    img.src = BERO_WAVE;
     const interval = setInterval(() => {
       setIsWaving(true);
       setTimeout(() => setIsWaving(false), 600);
