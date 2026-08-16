@@ -9,9 +9,11 @@ import { z } from "zod";
 import { notifyOwner } from "./_core/notification";
 import { verifyTurnstileToken } from "./security";
 import { ENV } from "./_core/env";
+import { chatRouter } from "./chat";
 
 export const appRouter = router({
   system: systemRouter,
+  chat: chatRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
