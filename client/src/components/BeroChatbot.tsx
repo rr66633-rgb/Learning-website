@@ -58,7 +58,7 @@ export function BeroChatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-20 h-24 hover:scale-110 transition-transform active:scale-95 drop-shadow-lg animate-bounce [animation-duration:3s]"
+          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-20 h-24 hover:scale-110 transition-transform active:scale-95 drop-shadow-lg animate-[bero-wave_2s_ease-in-out_infinite]"
           aria-label="تحدث مع بيرو"
         >
           <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-contain" />
