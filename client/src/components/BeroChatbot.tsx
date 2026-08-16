@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { X, Send } from "lucide-react";
 
-const BERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/JEmYuKzMWYwuyLgE.png";
+const BERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/NxnIziMWdhCufJoR.png";
 
 type Message = {
   role: "user" | "assistant";
@@ -58,10 +58,10 @@ export function BeroChatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-16 h-16 rounded-full shadow-xl hover:scale-110 transition-transform active:scale-95 overflow-hidden border-2 border-[var(--green-primary)] bg-white"
+          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-16 h-16 rounded-full shadow-xl hover:scale-110 transition-transform active:scale-95 overflow-hidden border-2 border-[var(--green-primary)] bg-[var(--sand)]"
           aria-label="تحدث مع بيرو"
         >
-          <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-cover object-top scale-150" />
+          <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-cover object-center" />
         </button>
       )}
 
@@ -70,8 +70,8 @@ export function BeroChatbot() {
         <div className="fixed bottom-0 right-0 md:bottom-6 md:right-6 z-50 w-full md:w-[380px] h-[500px] md:h-[520px] md:rounded-2xl rounded-t-2xl shadow-2xl flex flex-col overflow-hidden border border-[var(--border)] bg-white">
           {/* Header */}
           <div className="bg-[var(--navy)] px-4 py-3 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--green-primary)] bg-white shrink-0">
-              <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-cover object-top scale-150" />
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--green-primary)] bg-[var(--sand)] shrink-0">
+              <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-cover object-center" />
             </div>
             <div className="flex-1">
               <p className="text-white font-bold text-sm">بيرو 🐻</p>
@@ -150,4 +150,3 @@ export function BeroChatbot() {
     </>
   );
 }
-
