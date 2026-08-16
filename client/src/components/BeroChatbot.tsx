@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { X, Send } from "lucide-react";
 
-const BERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/NxnIziMWdhCufJoR.png";
+const BERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/DHBwBloxsRYjWutg.png";
 
 type Message = {
   role: "user" | "assistant";
@@ -58,7 +58,7 @@ export function BeroChatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-20 h-24 hover:scale-110 transition-transform active:scale-95 drop-shadow-lg"
+          className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8 w-20 h-24 hover:scale-110 transition-transform active:scale-95 drop-shadow-lg animate-bounce [animation-duration:3s]"
           aria-label="تحدث مع بيرو"
         >
           <img src={BERO_IMG} alt="بيرو" className="w-full h-full object-contain" />
