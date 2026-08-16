@@ -2,10 +2,10 @@ import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
-const IMG1 = "/manus-storage/IMG_4410_32804e7a.jpeg";
-const IMG3 = "/manus-storage/IMG_4412_ae9147b3.jpeg";
-const IMG4 = "/manus-storage/IMG_4413_6db9bfd0.jpeg";
-const IMG5 = "/manus-storage/IMG_4414_4863c1f5.jpeg";
+const IMG1 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4410_32804e7a.jpeg";
+const IMG3 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4412_ae9147b3.jpeg";
+const IMG4 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4413_6db9bfd0.jpeg";
+const IMG5 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4414_4863c1f5.jpeg";
 
 const programs = [
   {

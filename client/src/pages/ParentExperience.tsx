@@ -1,7 +1,7 @@
 import { Smartphone, Camera, MessageSquare, Bell, Heart } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
-const IMG = "/manus-storage/IMG_4420_0b7e428c.jpeg";
+const IMG = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4420_0b7e428c.jpeg";
 
 const features = [
   { icon: Smartphone, title: "تطبيق Illumine", desc: "ابقَ على تواصل مع يوم طفلك من خلال تطبيق التواصل المخصص لأولياء الأمور." },

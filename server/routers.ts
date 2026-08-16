@@ -8,6 +8,7 @@ import { desc, eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { notifyOwner } from "./_core/notification";
 import { verifyTurnstileToken } from "./security";
+import { ENV } from "./_core/env";
 
 export const appRouter = router({
   system: systemRouter,
@@ -16,8 +17,24 @@ export const appRouter = router({
     logout: publicProcedure.mutation(({ ctx }) => {
       const cookieOptions = getSessionCookieOptions(ctx.req);
       ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
+      ctx.res.clearCookie("admin_session", { path: "/" });
       return { success: true } as const;
     }),
+    login: publicProcedure
+      .input(z.object({ password: z.string() }))
+      .mutation(({ input, ctx }) => {
+        if (input.password === ENV.cookieSecret) {
+          ctx.res.cookie("admin_session", ENV.cookieSecret, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax",
+            maxAge: 30 * 24 * 60 * 60 * 1000,
+            path: "/",
+          });
+          return { success: true };
+        }
+        throw new Error("كلمة المرور غير صحيحة");
+      }),
   }),
 
   inquiry: router({

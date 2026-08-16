@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { ArrowLeft, Search, Target, UserCheck, Handshake } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
-const IMG = "/manus-storage/IMG_4418_2d702f2a.jpeg";
+const IMG = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4418_2d702f2a.jpeg";
 
 const services = [
   { icon: Search, title: "التقييم الشامل", desc: "تقييم دقيق لمهارات النطق واللغة لتحديد احتياجات كل طفل ووضع خطة تدخل مخصصة." },

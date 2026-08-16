@@ -1,8 +1,8 @@
 import { Target, Eye, Heart, Sparkles, Lightbulb, Users } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
-const IMG = "/manus-storage/IMG_4416_bb4c7e59.jpeg";
-const IMG2 = "/manus-storage/IMG_4417_1d27fc77.jpeg";
+const IMG = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4416_bb4c7e59.jpeg";
+const IMG2 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4417_1d27fc77.jpeg";
 
 export default function About() {
   return (
