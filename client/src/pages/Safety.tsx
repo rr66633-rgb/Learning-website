@@ -1,7 +1,7 @@
 import { Shield, Camera, UserCheck, HeartPulse, Lock } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
-const IMG = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4421_a4293a94.jpeg";
+const IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/LetuQVPxIPwZaeza.jpeg";
 
 const safetyFeatures = [
   { icon: Lock, title: "بيئة آمنة", desc: "أنظمة دخول محكمة مع إجراءات تسجيل دخول وخروج رقمية للأشخاص المصرح لهم فقط." },

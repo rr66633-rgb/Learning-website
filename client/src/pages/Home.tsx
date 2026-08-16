@@ -3,14 +3,14 @@ import { useState } from "react";
 import { GraduationCap, Shield, Heart, BookOpen, Users, Star, ArrowLeft, Quote, ChevronDown } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
-const HERO_IMG = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4424_1a952bea.jpeg";
-const LOGO_FULL = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/logo-full_496ed816.png";
-const IMG1 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4410_32804e7a.jpeg";
-const IMG2 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4411_8c1e7d44.jpeg";
-const IMG3 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4412_ae9147b3.jpeg";
-const IMG4 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4413_6db9bfd0.jpeg";
-const IMG5 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4414_4863c1f5.jpeg";
-const IMG6 = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4415_a8f0c1b3.jpeg";
+const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/DcbArOPJAhdOQizz.jpeg";
+const LOGO_FULL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/GkauvtqFBtFbtgzG.png";
+const IMG1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/lTetZTcFKraKwhqs.jpeg";
+const IMG2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/AtGliPwzZyTrtyIj.jpeg";
+const IMG3 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/PEHFYAqHdiNHtvOz.jpeg";
+const IMG4 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/VNpYtNAOlMIUuQwj.jpeg";
+const IMG5 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/hstFNOFgqgZiSGjt.jpeg";
+const IMG6 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/CuZzopOGSrRKxPlR.jpeg";
 
 const whyChooseUs = [
   { icon: GraduationCap, title: "منهج EYFS البريطاني", desc: "نعتمد منهج السنوات المبكرة البريطاني الذي يركز على التعلم باللعب والاستكشاف." },

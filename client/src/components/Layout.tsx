@@ -2,7 +2,7 @@ import { useState, useEffect, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, CalendarCheck } from "lucide-react";
 
-const LOGO = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/logo-full_496ed816.png";
+const LOGO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/GkauvtqFBtFbtgzG.png";
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },

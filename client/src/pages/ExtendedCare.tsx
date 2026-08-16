@@ -1,7 +1,7 @@
 import { Clock, BookOpen, Palette, BookMarked, Sun, Users } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
-const IMG = "https://d36hbw14aib5lz.cloudfront.net/310519663757302822/6L2CpNH9bCGNgbsvFwL2vd/IMG_4419_f5cf9230.jpeg";
+const IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/YUBqAmmhHjXRnUka.jpeg";
 
 const features = [
   { icon: Clock, title: "رعاية ممتدة حتى ٦:٣٠ مساءً", desc: "أوقات استلام مرنة تناسب جداول الأسر المشغولة." },
