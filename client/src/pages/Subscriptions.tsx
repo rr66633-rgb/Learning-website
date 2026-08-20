@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowLeft, Crown, Award, Medal, Bus, BookOpen, Users, Clock, CreditCard } from "lucide-react";
+import { ArrowLeft, Crown, Award, Medal, Bus, BookOpen, Users, Clock, CreditCard, UtensilsCrossed } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
 export default function Subscriptions() {
@@ -327,6 +327,109 @@ export default function Subscriptions() {
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Meals Section - Nutria */}
+      <section className="py-16 bg-gradient-to-b from-white to-[var(--sand)]/50">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
+              <UtensilsCrossed className="w-4 h-4" />
+              خدمة الوجبات المدرسية
+            </div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--navy)] mb-2">
+              وجبات نوتريا
+            </h2>
+            <p className="text-[var(--navy)]/60 text-sm max-w-xl mx-auto">
+              وجبات مدرسية متوازنة تُعدّ طازجة كل يوم — فطور وغداء وعصائر طازجة بالتعاون مع نوتريا
+            </p>
+          </div>
+
+          {/* Price Card */}
+          <div className="bg-white rounded-2xl shadow-md border border-orange-200 p-8 mb-10 text-center max-w-md mx-auto">
+            <div className="text-5xl font-extrabold text-[var(--green-primary)] mb-2">600 <span className="text-xl font-bold">ريال/شهر</span></div>
+            <p className="text-[var(--navy)]/70 text-sm mb-4">فطور + غداء يومي</p>
+            <div className="flex flex-wrap justify-center gap-3 text-xs">
+              <span className="bg-[var(--sand)] text-[var(--navy)] px-3 py-1.5 rounded-full font-medium">56 صنف متنوع</span>
+              <span className="bg-[var(--sand)] text-[var(--navy)] px-3 py-1.5 rounded-full font-medium">10.50 ريال لكل صنف</span>
+              <span className="bg-[var(--sand)] text-[var(--navy)] px-3 py-1.5 rounded-full font-medium">يُحضّر يومياً طازجاً</span>
+            </div>
+          </div>
+
+          {/* Meals Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[var(--border)] hover:shadow-md transition-shadow">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/FbqXEQUVmwTeaaRM.png" alt="فطور نوتريا" className="w-full h-56 object-cover" />
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-[var(--navy)] mb-2">الفطور</h3>
+                <p className="text-sm text-[var(--navy)]/70">بداية يوم مليئة بالطاقة — بانكيك، بيض، توست، فواكه طازجة، وزبادي بالجرانولا</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[var(--border)] hover:shadow-md transition-shadow">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663757302822/TVJIQkQJIRzmfQch.png" alt="غداء نوتريا" className="w-full h-56 object-cover" />
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-[var(--navy)] mb-2">الغداء</h3>
+                <p className="text-sm text-[var(--navy)]/70">وجبة متوازنة يحبها الأطفال — أرز، دجاج مشوي، خضروات، سلطة، وحمص مع خبز</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Menu Categories */}
+          <div className="bg-white rounded-2xl shadow-sm border border-[var(--border)] p-6 mb-10">
+            <h3 className="text-lg font-bold text-[var(--navy)] mb-4 text-center">أقسام القائمة</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center">
+              <div className="bg-[var(--sand)] rounded-xl p-3">
+                <div className="text-2xl font-bold text-[var(--green-primary)]">15</div>
+                <div className="text-xs text-[var(--navy)]/70 mt-1">ساندوتشات وراب</div>
+              </div>
+              <div className="bg-[var(--sand)] rounded-xl p-3">
+                <div className="text-2xl font-bold text-[var(--green-primary)]">14</div>
+                <div className="text-xs text-[var(--navy)]/70 mt-1">أطباق رئيسية</div>
+              </div>
+              <div className="bg-[var(--sand)] rounded-xl p-3">
+                <div className="text-2xl font-bold text-[var(--green-primary)]">13</div>
+                <div className="text-xs text-[var(--navy)]/70 mt-1">سلطات وفواكه</div>
+              </div>
+              <div className="bg-[var(--sand)] rounded-xl p-3">
+                <div className="text-2xl font-bold text-[var(--green-primary)]">9</div>
+                <div className="text-xs text-[var(--navy)]/70 mt-1">عصائر طازجة</div>
+              </div>
+              <div className="bg-[var(--sand)] rounded-xl p-3">
+                <div className="text-2xl font-bold text-[var(--green-primary)]">5</div>
+                <div className="text-xs text-[var(--navy)]/70 mt-1">حلويات</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            <div className="bg-white rounded-xl p-5 text-center shadow-sm border border-[var(--border)]">
+              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-lg">🌿</span>
+              </div>
+              <h4 className="font-bold text-[var(--navy)] text-sm mb-1">مكونات طازجة</h4>
+              <p className="text-xs text-[var(--navy)]/60">تُحضّر يومياً بدون تخزين</p>
+            </div>
+            <div className="bg-white rounded-xl p-5 text-center shadow-sm border border-[var(--border)]">
+              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-lg">⚖️</span>
+              </div>
+              <h4 className="font-bold text-[var(--navy)] text-sm mb-1">متوازنة غذائياً</h4>
+              <p className="text-xs text-[var(--navy)]/60">حصص مدروسة تناسب الأطفال</p>
+            </div>
+            <div className="bg-white rounded-xl p-5 text-center shadow-sm border border-[var(--border)]">
+              <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-lg">🛡️</span>
+              </div>
+              <h4 className="font-bold text-[var(--navy)] text-sm mb-1">إدارة الحساسية</h4>
+              <p className="text-xs text-[var(--navy)]/60">نُبلّغ المطبخ بحساسية طفلكم ويُستبعد المسبّب</p>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-[var(--navy)]/60">
+            للاشتراك في خدمة الوجبات، يرجى التواصل مع الاستقبال أو عبر واتساب
+          </p>
         </div>
       </section>
 
